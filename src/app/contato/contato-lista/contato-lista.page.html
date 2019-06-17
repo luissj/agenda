@@ -10,9 +10,9 @@
   <ion-list>
     <ion-item *ngFor="let contato of listaContatos | async">
       <ion-label>{{ contato.nome }}</ion-label>
-      <ion-label>{{ contato.usuario }}</ion-label>  
+      <ion-label>{{ contato.usuario }}</ion-label>
     </ion-item>
-
   </ion-list>
 
+      <ion-button color="dark" href="home" > Voltar </ion-button>
 </ion-content>
