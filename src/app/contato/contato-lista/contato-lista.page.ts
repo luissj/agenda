@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
-import { Contato } from '../entidade/contato';
+import { Contato } from '../entidade/entidade/contato';
 import { map } from 'rxjs/operators';
 
 @Component({

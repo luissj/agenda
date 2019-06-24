@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contato } from '../entidade/contato';
+import { Contato } from '../entidade/entidade/contato';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 
