@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Cadastro do Prof.:
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let professor of listaProfessor | async">
+      <ion-label>{{ professor.nome }}</ion-label>
+      <ion-label>{{ professor.colegio }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+      <ion-button color="dark" href="home" > Voltar </ion-button>
+</ion-content>
