@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'inicio', loadChildren: './contato/inicio/inicio.module#InicioPageModule' },
   { path: 'professor-salvar', loadChildren: './professor/professor-salvar/professor-salvar.module#ProfessorSalvarPageModule' },
   { path: 'professor-lista', loadChildren: './professor/professor-lista/professor-lista.module#ProfessorListaPageModule' },
+  { path: 'pre-historia', loadChildren: './contato/pre-historia/pre-historia.module#PreHistoriaPageModule' },
 
 ];
 
