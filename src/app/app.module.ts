@@ -16,14 +16,16 @@ import { AppRoutingModule } from './app-routing.module';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
    AngularFireModule.initializeApp({
-     apiKey: "AIzaSyCYizW8LIIvMPlxhxWnwJ7kMFRH3adMu8o",
-         authDomain: "agenda-c8f5f.firebaseapp.com",
-         databaseURL: "https://agenda-c8f5f.firebaseio.com",
-         projectId: "agenda-c8f5f",
+
+     apiKey: "AIzaSyDQFjsnYtG_EtLUGkoDZJVeQ1UT9z-XnFo",
+         authDomain: "historia-9c1fa.firebaseapp.com",
+         databaseURL: "https://historia-9c1fa.firebaseio.com",
+         projectId: "historia-9c1fa",
          storageBucket: "",
-         messagingSenderId: "1088184016800",
-         appId: "1:1088184016800:web:0dab28dddef640e2"
-     }), AngularFireDatabaseModule 
+         messagingSenderId: "767806400982",
+         appId: "1:767806400982:web:bd138d32361d9dd2"
+
+     }), AngularFireDatabaseModule
        ],
   providers: [
     StatusBar,
