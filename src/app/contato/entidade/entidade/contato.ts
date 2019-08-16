@@ -1,9 +1,9 @@
 export class Contato {
-nome: String;
-usuario: String;
-email: String;
-senha: String;
-confirmacao: String;
-colegio: String;
+nome: string;
+usuario: string;
+email: string;
+senha: string;
+confirmacao: string;
+colegio: string;
 
 }

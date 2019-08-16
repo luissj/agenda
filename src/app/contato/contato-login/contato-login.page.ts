@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contato-login.page.scss'],
 })
 export class ContatoLoginPage implements OnInit {
-  usuario: String;
-  senha: String;
-  
+  email: string;
+  senha: string;
+
   constructor() { }
 
+
+
   ngOnInit() {
+
   }
 
 }

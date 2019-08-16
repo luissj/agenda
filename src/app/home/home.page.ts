@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
-import { Professor } from '../professor/identidade/professor';
 import { Router } from '@angular/router';
+import { ContatoLoginPage } from '../contato/contato-login/contato-login.page';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  professor: Professor = new Professor();
+  contato: ContatoLoginPage = new ContatoLoginPage();
 
 constructor(private router: Router, private afAuth: AngularFireAuth) {}
 
 logar(){
-this.afAuth.auth.signInWithEmailAndPassword( this.professor.email, this.professor.senha).then(
-() => { this.router.navigate(['pagina']); }
+this.afAuth.auth.signInWithEmailAndPassword( this.contato.email, this.contato.senha).then(
+() => { this.router.navigate(['inicio']); }
 ).catch( (erro) => console.log(erro) );
 }
 
