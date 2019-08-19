@@ -17,7 +17,7 @@ constructor(private router: Router, private afAuth: AngularFireAuth) {}
 logar(){
 this.afAuth.auth.signInWithEmailAndPassword( this.contato.email, this.contato.senha).then(
 () => { this.router.navigate(['inicio']); }
-).catch( (erro) => console.log(erro) );
+).catch( (erro) => alert("Senha ou Email inexistente") );
 }
 
 logout() {

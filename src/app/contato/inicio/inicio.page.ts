@@ -8,6 +8,9 @@ import { MenuController } from '@ionic/angular';
 })
 
 export class InicioPage implements OnInit {
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
   constructor(private menu: MenuController) { }
 
   openFirst() {
@@ -22,7 +25,4 @@ export class InicioPage implements OnInit {
     openCustom() {
       this.menu.enable(true, 'custom');
       this.menu.open('custom');
-    }
-  }
-
-  //ngOnInit() {}
+    }  }
