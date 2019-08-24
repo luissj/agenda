@@ -1,20 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-pre-historia',
   templateUrl: './pre-historia.page.html',
   styleUrls: ['./pre-historia.page.scss'],
 })
 export class PreHistoriaPage implements OnInit {
-
-  clicar(): void{
-         alert("Caro Professor, a idéia é que ao clicar no botão continuar, irá continuar para as telas seguintes,em que haverão mais explicações de cada período e seus respectivos pontos, com duas ou mais telas para cada período histórico");
-  
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
   }
+  constructor(private menu: MenuController) { }
+  openFirst() {
+      this.menu.enable(true, 'first');
+      this.menu.open('first');
+    }
 
-  constructor() { }
+    openEnd() {
+      this.menu.open('end');
+    }
 
-  ngOnInit() {
-  }
+    openCustom() {
+      this.menu.enable(true, 'custom');
+      this.menu.open('custom');
+    }
 
 }

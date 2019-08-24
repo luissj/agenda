@@ -22,6 +22,6 @@ this.afAuth.auth.signInWithEmailAndPassword( this.contato.email, this.contato.se
 
 logout() {
 this.afAuth.auth.signOut();
-this.router.navigate(['/']);
+this.router.navigate(['home']);
 }
 }

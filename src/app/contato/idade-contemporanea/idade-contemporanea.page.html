@@ -1,9 +1,64 @@
 <ion-header>
   <ion-toolbar>
+    <ion-menu-button auto-hide> </ion-menu-button>
     <ion-title>Idade Contemporanea <ion-icon name="bulb"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-menu side="start" menuId="first">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Pré-História</ion-item>
+      <ion-item>Antiguidade</ion-item>
+      <ion-item>Idade Média</ion-item>
+      <ion-item>Idade Contemporânea</ion-item>
+      <ion-item>Idade Moderna</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="start" menuId="custom" class="my-custom-menu">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Períodos Históricos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item><ion-button color="dark" href="pre-historia">Pré-História <ion-icon name="flame"></ion-icon></ion-button></ion-item>
+      <ion-item><ion-button color="dark" href="antiguidade">Antiguidade <ion-icon name="globe"></ion-icon></ion-button></ion-item>
+      <ion-item><ion-button color="dark" href="idade-media">Idade Média <ion-icon name="color-palette"></ion-icon></ion-button></ion-item>
+      <ion-item><ion-button color="success">Idade Contemporânea <ion-icon name="bulb"></ion-icon></ion-button></ion-item>
+      <ion-item><ion-button color="dark" href="idade-moderna">Idade Moderna <ion-icon name="logo-ionitron"></ion-icon></ion-button></ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="end" type="push">
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>End Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>
+
+
 <ion-content>
+  <ion-button color="medium"> Continuar </ion-button>
 <ion-button color="medium" href="inicio"> Voltar </ion-button>
 </ion-content>
