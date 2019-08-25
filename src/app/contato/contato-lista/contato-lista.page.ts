@@ -22,7 +22,7 @@ listaContatos: Observable<Contato[]>;
 
     );
   }
-
+  
   ngOnInit() {
   }
 
