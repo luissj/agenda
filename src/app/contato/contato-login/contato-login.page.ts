@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class ContatoLoginPage implements OnInit {
   email: string;
   senha: string;
+  contato: any;
+  afAuth: any;
+  router: any;
 
   constructor() { }
 
-
+//redefinir(){
+  //this.afAuth.auth.signInWithEmailAndPasswordResetEmail(this.contato.email).then(() =>alert()); { this.router.navigate(['contato-salvar'])}
+//}
 
   ngOnInit() {
 

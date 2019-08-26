@@ -3,15 +3,16 @@
         <ion-title>
             Cadastro do Prof.:
         </ion-title>
-        <ion-searchbar type="tel" placeholder="Pesquise o Usuário"></ion-searchbar>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-searchbar type="tel" placeholder="Pesquise o Usuário"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let professor of listaProfessor | async">
       <ion-label>{{ professor.nome }}</ion-label>
       <ion-label>{{ professor.colegio }}</ion-label>
+      <ion-button color="danger" href="home" (click)="excluir(contato.key)"> Excluir <ion-icon name="trash"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
 

@@ -22,7 +22,10 @@ listaContatos: Observable<Contato[]>;
 
     );
   }
-  
+    excluir(key){
+      this.fire.list('contato').remove(key);
+      alert("Exluido com sucesso!");
+    }
   ngOnInit() {
   }
 

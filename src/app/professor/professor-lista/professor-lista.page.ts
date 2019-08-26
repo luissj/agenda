@@ -23,7 +23,10 @@ listaProfessor: Observable<Professor[]>;
 
     );
    }
-
+   excluir(key){
+     this.fire.list('contato').remove(key);
+     alert("Exluido com sucesso!");
+   }
   ngOnInit() {
   }
 
