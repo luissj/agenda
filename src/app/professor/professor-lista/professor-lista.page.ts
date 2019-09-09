@@ -3,6 +3,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { Professor } from '../identidade/professor';
 import { map } from 'rxjs/operators';
+import { ModalController } from '@ionic/angular';
+import { ProfessorSalvarPage } from '../professor-salvar/professor-salvar.page';
 
 @Component({
   selector: 'app-professor-lista',
@@ -13,7 +15,7 @@ export class ProfessorListaPage implements OnInit {
 
 listaProfessor: Observable<Professor[]>;
 
-  constructor(private fire: AngularFireDatabase) {
+  constructor(private fire: AngularFireDatabase, private modal: ModalController) {
 
     this.listaProfessor = this.fire.list<Professor>('professor')
     .snapshotChanges().pipe(
@@ -23,11 +25,18 @@ listaProfessor: Observable<Professor[]>;
 
     );
    }
-   excluir(key){
-     this.fire.list('contato').remove(key);
-     alert("Exluido com sucesso!");
-   }
-  ngOnInit() {
+
+  ngOnInit() {}
+
+  excluir(entidade) {
+    this.fire.list('professor').remove(entidade.key);
+  }
+
+  async alterar(professor) {
+    const tela = await this.modal.create({
+      component: ProfessorSalvarPage, componentProps: { professor: professor }
+    });
+    tela.present();
   }
 
 }

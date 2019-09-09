@@ -1,4 +1,5 @@
 export class Professor {
+key;
 nome: string;
 usuario: string;
 email: string;

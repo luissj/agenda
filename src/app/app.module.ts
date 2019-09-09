@@ -11,12 +11,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContatoSalvarPageModule } from './contato/contato-salvar/contato-salvar.module';
+import { ProfessorSalvarPageModule } from './professor/professor-salvar/professor-salvar.module';
 
 
 @NgModule({
   declarations: [AppComponent,],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ContatoSalvarPageModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ContatoSalvarPageModule, ProfessorSalvarPageModule,
    AngularFireModule.initializeApp({
 
      apiKey: "AIzaSyDQFjsnYtG_EtLUGkoDZJVeQ1UT9z-XnFo",

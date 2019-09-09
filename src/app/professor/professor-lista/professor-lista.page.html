@@ -12,7 +12,8 @@
     <ion-item *ngFor="let professor of listaProfessor | async">
       <ion-label>{{ professor.nome }}</ion-label>
       <ion-label>{{ professor.colegio }}</ion-label>
-      <ion-button color="danger" href="home" (click)="excluir(contato.key)"> Excluir <ion-icon name="trash"></ion-icon></ion-button>
+      <ion-button (click)="excluir(professor)"> <ion-icon name="trash"></ion-icon> </ion-button>
+      <ion-button (click)="alterar(professor)"> <ion-icon name="create"></ion-icon></ion-button>
     </ion-item>
   </ion-list>
 
