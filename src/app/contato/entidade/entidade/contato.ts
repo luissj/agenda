@@ -1,4 +1,5 @@
 export class Contato {
+key;
 nome: string;
 usuario: string;
 email: string;

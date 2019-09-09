@@ -10,11 +10,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ContatoSalvarPageModule } from './contato/contato-salvar/contato-salvar.module';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ContatoSalvarPageModule,
    AngularFireModule.initializeApp({
 
      apiKey: "AIzaSyDQFjsnYtG_EtLUGkoDZJVeQ1UT9z-XnFo",
