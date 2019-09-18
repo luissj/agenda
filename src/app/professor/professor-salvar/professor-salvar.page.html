@@ -5,36 +5,48 @@
 </ion-header>
 
 <ion-content>
+<form #formTeste = 'ngForm'>
   <ion-item>
     <ion-label position="floating">Nome Completo: </ion-label>
-    <ion-input type= "text" [(ngModel)]="professor.nome" placeholder="Insira o seu Nome"> </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating"> Usuário: </ion-label>
-    <ion-input type="text" [(ngModel)]="professor.usuario" placeholder="Usuário"> </ion-input>
+    <ion-input #nome='ngModel' type= "text" [(ngModel)]="professor.nome" name='nome' required> </ion-input>
+    <span style='color:red' *ngIf="nome.errors && nome.touched">
+      <ion-label>O nome é obrigatório </ion-label>
+    </span>
   </ion-item>
 
     <ion-item>
         <ion-label position="floating"> Email: </ion-label>
-        <ion-input type="text" [(ngModel)]="professor.email" placeholder="Email"> </ion-input>
+        <ion-input #email='ngModel' type="text" [(ngModel)]="professor.email" name='email' required> </ion-input>
+        <span style='color:red' *ngIf="email.errors && email.touched">
+          <ion-label>O email é obrigatório </ion-label>
+        </span>
     </ion-item>
 
     <ion-item>
         <ion-label position="floating"> Senha: </ion-label>
-        <ion-input type="password" [(ngModel)]="professor.senha" placeholder="Informe a sua senha"> </ion-input>
+        <ion-input #senha='ngModel' type="password" [(ngModel)]="professor.senha" name='senha' required> </ion-input>
+        <span style='color:red' *ngIf="senha.errors && senha.touched">
+          <ion-label>A senha é obrigatória </ion-label>
+        </span>
     </ion-item>
 
     <ion-item>
         <ion-label position="floating"> Confirmação da Senha: </ion-label>
-        <ion-input type="password" [(ngModel)]="professor.confirmacao" placeholder="Confirme a senha"> </ion-input>
+        <ion-input #confirmacao='ngModel' type="password" [(ngModel)]="professor.confirmacao" name='confirmacao' required> </ion-input>
+        <span style='color:red' *ngIf="confirmacao.errors && confirmacao.touched">
+          <ion-label>A confirmação é obrigatória </ion-label>
+        </span>
     </ion-item>
 
     <ion-item>
         <ion-label position="floating"> Colégio: </ion-label>
-        <ion-input type="text" [(ngModel)]="professor.colegio" placeholder="Informe o seu colégio"> </ion-input>
+        <ion-input #colegio='ngModel' type="text" [(ngModel)]="professor.colegio" name='colegio' required> </ion-input>
+        <span style='color:red' *ngIf="colegio.errors && colegio.touched">
+          <ion-label>O colégio é obrigatório </ion-label>
+        </span>
     </ion-item>
 
-      <ion-button color= "dark" (click)="salvar()"> <ion-icon name="checkmark"></ion-icon> Salvar </ion-button>
+      <ion-button color= "dark" [disabled] ='!formTeste.form.valid' (click)="salvar()"> <ion-icon name="checkmark"></ion-icon> Salvar </ion-button>
       <ion-button color="dark" href="home" > Voltar </ion-button>
+</form>
 </ion-content>
