@@ -11,7 +11,7 @@ import { Contato } from '../contato/entidade/entidade/contato';
 })
 export class HomePage {
 
-  contato: Contato= new Contato();
+contato: Contato= new Contato();
 
 constructor(private router: Router, private afAuth: AngularFireAuth) {}
 

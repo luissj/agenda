@@ -19,11 +19,28 @@
                   Idade Comtemporânea que vivenciamos atualmente.
                 </nav>
                   <ion-button color="dark" href="contato-salvar" > Cadastrar Aluno </ion-button>
-                  <ion-button color="dark" href="contato-login" > <ion-icon name="log-in"> </ion-icon> Entrar </ion-button>
                   <ion-button color="dark" href="professor-salvar" > Cadastrar Prof. </ion-button>
 
             </ion-card-content>
    </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+    <ion-card-title> Entrar </ion-card-title>
+  </ion-card-header>
+   <ion-card-content>
+     <ion-item>
+       <ion-label position="floating"> Email: </ion-label>
+<ion-input type="text" name="nome" [(ngModel)]="contato.email"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"> Senha: </ion-label>
+<ion-input type="password" name="telefone" [(ngModel)]="contato.senha"></ion-input>
+    </ion-item>
+<ion-button color="dark" (click)="logar()">Acessar <ion-icon name="log-in"> </ion-icon></ion-button>
+</ion-card-content>
+</ion-card>
 </ion-content>
 
 <ion-footer>
