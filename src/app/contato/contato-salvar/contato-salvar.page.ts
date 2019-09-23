@@ -14,6 +14,7 @@ export class ContatoSalvarPage implements OnInit {
 
   contato: Contato = new Contato();
 
+
   constructor(
     private banco: AngularFireDatabase,
     private rota: Router,
@@ -35,5 +36,4 @@ export class ContatoSalvarPage implements OnInit {
       this.modal.dismiss();
     }
   }
-
 }

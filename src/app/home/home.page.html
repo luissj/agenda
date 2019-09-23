@@ -38,7 +38,8 @@
       <ion-label position="floating"> Senha: </ion-label>
 <ion-input type="password" name="telefone" [(ngModel)]="contato.senha"></ion-input>
     </ion-item>
-<ion-button color="dark" (click)="logar()">Acessar <ion-icon name="log-in"> </ion-icon></ion-button>
+<ion-button color="dark" (click)="logar()"> Logar <ion-icon name="log-in"> </ion-icon></ion-button>
+<ion-button (click)="redefinir()" color="primary"> Redefinir Senha: </ion-button>
 </ion-card-content>
 </ion-card>
 </ion-content>

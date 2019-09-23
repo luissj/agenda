@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
 import { Router } from '@angular/router';
-import { ContatoLoginPage } from '../contato/contato-login/contato-login.page';
+
 import { Contato } from '../contato/entidade/entidade/contato';
 
 @Component({
@@ -14,6 +14,14 @@ export class HomePage {
 contato: Contato= new Contato();
 
 constructor(private router: Router, private afAuth: AngularFireAuth) {}
+
+redefinir(){
+  alert('verifique seu email')
+ this.afAuth.auth.sendPasswordResetEmail(this.contato.email).then(
+   () => alert ('verifique seu email')
+ ); { this.router.navigate(['contato-salvar']);
+  }
+}
 
 logar(){
 this.afAuth.auth.signInWithEmailAndPassword( this.contato.email, this.contato.senha).then(

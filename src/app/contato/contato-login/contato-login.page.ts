@@ -14,10 +14,12 @@ export class ContatoLoginPage implements OnInit {
 
   constructor() { }
 
-//redefinir(){
-  //this.afAuth.auth.signInWithEmailAndPasswordResetEmail(this.contato.email).then(() =>alert()); { this.router.navigate(['contato-salvar'])}
-//}
-
+logar(){
+  this.afAuth.auth.createUserWithEmailAndPassword(this.contato.email, this.contato.senha).then(
+() => { this.router.navigate(['']) }
+  ).catch((erro) => console.log (erro));
+  alert("Cadastro bem Sucessido!")
+}
   ngOnInit() {
 
   }

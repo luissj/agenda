@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Logar: </ion-title>
+    <ion-title> Cadastrar </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +15,7 @@
         <ion-input type="password" [(ngModel)]="senha" placeholder="Insira sua senha"> </ion-input>
     </ion-item>
 
-<ion-button href="contato-salvar" expand="full" color="primary"> Redefinir Senha:</ion-button>
-<ion-button color="dark" href="inicio"> Entrar </ion-button>
+
+<ion-button color="dark" (click)="logar()"> Cadastrar </ion-button>
 <ion-button color="dark" href="home" > Voltar </ion-button>
 </ion-content>
