@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar type="tel" placeholder="Pesquise o Usuário"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let professor of listaProfessor | async">
+      <ion-item *ngFor="let professor of listaFiltro">
       <ion-label>{{ professor.nome }} <br> {{ professor.email }}</ion-label><br/>
-      <b><ion-label>{{ professor.colegio }}</ion-label></b><br/>
+      <<ion-label>{{ professor.colegio }}</ion-label></b><br/>
 
 
       <ion-button (click)="excluir(professor)"> <ion-icon name="trash"></ion-icon> </ion-button>

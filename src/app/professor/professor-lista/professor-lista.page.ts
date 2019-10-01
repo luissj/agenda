@@ -5,6 +5,9 @@ import { Professor } from '../identidade/professor';
 import { map } from 'rxjs/operators';
 import { ModalController } from '@ionic/angular';
 import { ProfessorSalvarPage } from '../professor-salvar/professor-salvar.page';
+import * as _ from 'lodash';
+
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-professor-lista',
@@ -14,8 +17,16 @@ import { ProfessorSalvarPage } from '../professor-salvar/professor-salvar.page';
 export class ProfessorListaPage implements OnInit {
 
 listaProfessor: Observable<Professor[]>;
+listaFiltro: Professor[];
+filtro = {};
+professor: any;
+valor: string;
 
-  constructor(private fire: AngularFireDatabase, private modal: ModalController) {
+  constructor(
+private fire: AngularFireDatabase,
+private modal: ModalController,
+private rota: Router
+   ) {
 
     this.listaProfessor = this.fire.list<Professor>('professor')
     .snapshotChanges().pipe(
@@ -26,7 +37,17 @@ listaProfessor: Observable<Professor[]>;
     );
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.listaProfessor.subscribe(contato => {
+          this.professor = contato;
+          this.listaFiltro = _.filter(this.professor, _.conforms(this.filtro));
+    })
+  }
+
+  filtrar(){
+    this.filtro['nome'] = val => val.includes(this.valor);
+    this.listaFiltro = _.filter(this.professor, _.conforms(this.filtro));
+}
 
   excluir(entidade) {
     this.fire.list('professor').remove(entidade.key);

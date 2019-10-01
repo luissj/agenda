@@ -35,7 +35,13 @@ private modal: ModalController) {
 
       );
   }
-  ngOnInit() { }
+  ngOnInit() {
+
+    this.listaContatos.subscribe(contato => {
+          this.contato = contato;
+          this.listaFiltro = _.filter(this.contato, _.conforms(this.filtro));
+    })
+   }
 
   filtrar(){
     this.filtro['nome'] = val => val.includes(this.valor);
