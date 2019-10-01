@@ -5,6 +5,9 @@ import { Contato } from '../entidade/entidade/contato';
 import { map } from 'rxjs/operators';
 import { ModalController } from '@ionic/angular';
 import { ContatoSalvarPage } from '../contato-salvar/contato-salvar.page';
+import * as _ from 'lodash';
+
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-contato-lista',
@@ -14,9 +17,16 @@ import { ContatoSalvarPage } from '../contato-salvar/contato-salvar.page';
 export class ContatoListaPage implements OnInit {
 
   listaContatos: Observable<Contato[]>;
+  listaFiltro: Contato[];
+  filtro = {};
+  contato: any;
+  valor: string;
 
-  constructor(private fire: AngularFireDatabase,
-    private modal: ModalController) {
+  constructor(
+private rota: Router,
+private fire: AngularFireDatabase,
+private modal: ModalController) {
+
     this.listaContatos = this.fire.list<Contato>('contato')
       .snapshotChanges().pipe(
         map(lista => lista.map(linha => ({
@@ -26,6 +36,11 @@ export class ContatoListaPage implements OnInit {
       );
   }
   ngOnInit() { }
+
+  filtrar(){
+    this.filtro['nome'] = val => val.includes(this.valor);
+    this.listaFiltro = _.filter(this.contato, _.conforms(this.filtro));
+}
 
   excluir(entidade) {
     this.fire.list('contato').remove(entidade.key);

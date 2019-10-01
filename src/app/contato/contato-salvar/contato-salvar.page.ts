@@ -3,7 +3,7 @@ import { Contato } from '../entidade/entidade/contato';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-
+import { AngularFireAuth } from "angularfire2/auth";
 
 @Component({
   selector: 'app-contato-salvar',
@@ -18,16 +18,21 @@ export class ContatoSalvarPage implements OnInit {
   constructor(
     private banco: AngularFireDatabase,
     private rota: Router,
-    private modal: ModalController
+    private modal: ModalController,
+    private afAuth: AngularFireAuth
   ) {
 
 
   }
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   salvar() {
-    if (this.contato.key == null) {
+    this.afAuth.auth.createUserWithEmailAndPassword(this.contato.email, this.contato.senha).then(
+  () => { this.rota.navigate(['contato-lista']) }
+    ).catch((erro) => console.log (erro));
+    alert("Cadastro bem Sucessido!")
+
+     if (this.contato.key == null) {
       this.banco.list('contato').push(this.contato);
       this.contato = new Contato();
       this.rota.navigate(['contato-lista']);

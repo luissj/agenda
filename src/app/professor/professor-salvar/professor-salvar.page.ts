@@ -3,6 +3,7 @@ import { Professor } from '../identidade/professor';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { AngularFireAuth } from "angularfire2/auth";
 
 
 @Component({
@@ -17,7 +18,8 @@ export class ProfessorSalvarPage implements OnInit {
   constructor(
     private banco: AngularFireDatabase,
     private rota: Router,
-    private modal: ModalController
+    private modal: ModalController,
+    private afAuth: AngularFireAuth
   ) {
 
   }
@@ -26,6 +28,11 @@ export class ProfessorSalvarPage implements OnInit {
   }
 
   salvar() {
+    this.afAuth.auth.createUserWithEmailAndPassword(this.professor.email, this.professor.senha).then(
+  () => { this.rota.navigate(['professor-lista']) }
+    ).catch((erro) => console.log (erro));
+    alert("Cadastro bem Sucessido!")
+
     if (this.professor.key == null) {
       this.banco.list('professor').push(this.professor);
       this.professor = new Professor();
